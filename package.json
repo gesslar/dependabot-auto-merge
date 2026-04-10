@@ -7,12 +7,11 @@
     "build": "ncc build src/index.js -o dist",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
-    "update": "pnpm self-update && pnpx npm-check-updates -u && pnpm install",
-    "patch": "pnpm version patch",
-    "minor": "pnpm version minor",
-    "major": "pnpm version major"
+    "update": "npx npm-check-updates -u && npm install",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major"
   },
-  "packageManager": "pnpm@10.27.0",
   "keywords": [
     "github",
     "action",
@@ -23,15 +22,15 @@
     "node": ">=22"
   },
   "author": "gesslar",
-  "license": "Unlicense",
+  "license": "0BSD",
   "type": "module",
   "dependencies": {
-    "@actions/core": "^2.0.1",
-    "@actions/github": "^6.0.1"
+    "@actions/core": "^3.0.0",
+    "@actions/github": "^9.1.0"
   },
   "devDependencies": {
-    "@gesslar/uglier": "^1.0.0",
+    "@gesslar/uglier": "^2.4.0",
     "@vercel/ncc": "^0.38.4",
-    "eslint": "^9.39.2"
+    "eslint": "^10.2.0"
   }
 }
