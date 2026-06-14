@@ -8,6 +8,7 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "update": "npx npm-check-updates -u && npm install",
+    "version": "npm run build && git add dist",
     "patch": "npm version patch",
     "minor": "npm version minor",
     "major": "npm version major"
@@ -19,18 +20,18 @@
     "automation"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "author": "gesslar",
   "license": "0BSD",
   "type": "module",
   "dependencies": {
-    "@actions/core": "^3.0.0",
-    "@actions/github": "^9.1.0"
+    "@actions/core": "^3.0.1",
+    "@actions/github": "^9.1.1"
   },
   "devDependencies": {
-    "@gesslar/uglier": "^2.4.0",
-    "@vercel/ncc": "^0.38.4",
-    "eslint": "^10.2.0"
+    "@gesslar/uglier": "^2.4.1",
+    "@vercel/ncc": "^0.44.0",
+    "eslint": "^10.5.0"
   }
 }
