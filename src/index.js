@@ -79,7 +79,7 @@ const mergeFlags = {
       const dependabotPRs = prs.filter(pr => pr.user.login === "dependabot[bot]")
       core.info(`Found ${dependabotPRs.length} open Dependabot PRs in ${repoOwner}/${repo}`)
 
-      // Comment on each PR
+      // Enable auto-merge on each PR
       for(const pr of dependabotPRs) {
         core.info(`→ PR #${pr.number}: ${pr.title}`)
 

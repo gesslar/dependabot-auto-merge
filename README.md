@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Auto-merge Dependabot PRs
-        uses: gesslar/dependabot-auto-comment-merge@main
+        uses: gesslar/dependabot-auto-merge@main
         with:
           # GitHub token with permissions to merge PRs
           # For organization-wide access, use a personal access token
@@ -30,14 +30,14 @@ jobs:
           # Comma-separated list of repositories to check for Dependabot PRs
           # If not set, all repositories of the owner will be processed
           # Example: "repo1,repo2,repo3"
-          repositories: ${{ vars.DEPENDABOT_AUTO_COMMENT_REPOS }}
+          repositories: ${{ vars.DEPENDABOT_AUTO_MERGE_REPOS }}
 
           # Comma-separated list of repositories to ignore
           # Useful when processing all repos but wanting to exclude specific ones
           # Example: "ignore-repo1,ignore-repo2"
-          ignore-repositories: ${{ vars.DEPENDABOT_AUTO_COMMENT_IGNORE_REPOS }}
+          ignore-repositories: ${{ vars.DEPENDABOT_AUTO_MERGE_IGNORE_REPOS }}
 
-          # Dry run mode - if true, will only log actions without posting comments
+          # Dry run mode - if true, will only log actions without enabling auto-merge
           # Default: false
           dry-run: ${{ vars.DEPENDABOT_DRY_RUN }}
 
@@ -54,12 +54,12 @@ jobs:
 | `repo-owner` | Repository owner (can be a username or organization name). Used to determine which repositories to scan for Dependabot PRs. | No | `${{ github.repository_owner }}` |
 | `repositories` | Comma-separated list of repositories to check for Dependabot PRs. If not provided, all repositories of the owner will be checked. | No | All repos of owner |
 | `ignore-repositories` | Comma-separated list of repositories to ignore. Useful when checking all repos but wanting to exclude a few. | No | None |
-| `dry-run` | If set to "true", the action will log what it would do without actually merging. Useful for testing. | No | `false` |
+| `dry-run` | If set to "true", the action will log what it would do without enabling auto-merge. Useful for testing. | No | `false` |
 | `merge-type` | Specifies the merge strategy to use when enabling auto-merge for Dependabot PRs. Valid values are: `merge`, `rebase`, or `squash`. | No | `merge` |
 
 ## License
 
-`dependabot-auto-comment-merge` is released under the [0BSD](LICENSE.txt).
+`dependabot-auto-merge` is released under the [0BSD](LICENSE.txt).
 
 This package includes or depends on third-party components under their own
 licenses:
